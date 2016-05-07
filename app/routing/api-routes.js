@@ -8,15 +8,14 @@ var friendsData = require('../data/friends.js');
 var path = require('path');
 
 var totalDifference = 0;
-// var user = '';
 
-// module.exports = function(app){
-// 	app.get('/api/friends', function(req, res){
-// 		res.json(friendsData);
-// 	});
+module.exports = function(app){
+	app.get('/api/friends', function(req, res){
+		res.json(friendsData);
+	});
 
-// 	app.post('/api/friends', function(req, res){
-// 		friendsData.push(req.body);
+	app.post('/api/friends', function(req, res){
+		friendsData.push(req.body);
 
 
 
@@ -30,14 +29,8 @@ var totalDifference = 0;
 			user = friendsData[loc];
 			console.log(user);
 
-			//this is the total difference between the user score and the specific friends score set to the variable totalDifference
-			// totalDifference = totalDifference[i]; 
-
-
-
 			//loop through that friends score and the users score and calculate the absolute difference between the two and push that to the total difference variable set above
 			for(var j = 0; j < 10; j++){
-				// difference = (user.scores[j]) - (friends.scores[j]);
 
 				console.log(user.scores[j] + "user");
 				console.log(friends.scores[j] + "friend");
@@ -45,12 +38,16 @@ var totalDifference = 0;
 				absDifference = Math.abs((user.scores[j]) - (friends.scores[j]));
 				console.log(absDifference + "difference");
 
-				// totalDifference += absDifference;
-				// 	console.log(totalDifference + "difference");
+				totalDifference += absDifference;
+					console.log(totalDifference + "difference");
 			}
-			// console.log(totalDifference);
+			console.log(totalDifference);
+			if(totalDifference < 5){
+				data = friends[i];
+
+			}
 		}
 
 		
-// 	});
-// }
+	});
+}
