@@ -247,29 +247,30 @@
 	    		]
 	    	}
 	    	// Grab the URL of the website
-	    	var currentURL = window.location.origin;
+	    	var directoryURL = 'https://salty-island-23857.herokuapp.com/';
+		    $.post(directoryName + "/api/friends", userData, function(data){
+		      data.push(userData);
+		      function showMatch(){
+		       	var name = JSON.stringify(yourMatch[0].name);
+		       	var photo = yourMatch[0].photo;
+		       	$("#matchName").text(name);
+		       	$('#matchImg').attr("src", photo);
+		       	$("#resultsModal").modal('toggle');	
+		      };
+		      showMatch();
+		    }); 
 
-	    	// AJAX post the data to the friends API. 
-	    	$.post(currentURL + "/api/friends", userData, function(data){
+	  } else {
+	   	alert("You did not fill out all the fields in the form.");
+	  }
 
-	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
-	    		$("#matchName").text(data.name);
-	    		$('#matchImg').attr("src", data.photo);
-
-		    	// Show the modal with the best match 
-		    	$("#resultsModal").modal('toggle');
-
-	    	});
-		}
-		else
-		{
-			alert("Please fill out all fields before submitting!");
-		}
-    	
-    	return false;
-    });
-
-
+	  $('#close').on('click', function() {
+	  	$.get('/survey', function(req, res) {
+	  	  $(".body").load(res);
+	  	});
+	  });
+	  return false;
+	});
 	</script>
 </body>
 </html>

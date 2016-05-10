@@ -42,8 +42,10 @@ module.exports = function(app){
 					console.log(totalDifference + "difference");
 			}
 			console.log(totalDifference);
-			if(totalDifference < 5){
-				data = friends[i];
+			if(totalDifference <= 5){
+				yourMatch = friends[i];
+				console.log(yourMatch);
+
 
 			}
 		}
