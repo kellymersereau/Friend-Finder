@@ -248,7 +248,7 @@
 	    	}
 	    	// Grab the URL of the website
 	    	var directoryURL = 'https://salty-island-23857.herokuapp.com/';
-		    $.post(directoryName + "/api/friends", userData, function(data){
+		    $.post(directoryURL + "/api/friends", userData, function(data){
 		      data.push(userData);
 		      function showMatch(){
 		       	var name = JSON.stringify(yourMatch[0].name);
