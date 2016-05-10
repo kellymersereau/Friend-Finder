@@ -45,8 +45,6 @@ module.exports = function(app){
 			if(totalDifference <= 5){
 				yourMatch = friends[i];
 				console.log(yourMatch);
-
-
 			}
 		}
 
