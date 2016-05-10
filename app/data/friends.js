@@ -5,11 +5,11 @@ var friends = [
 		photo: "#",
 		scores: [1, 3, 1, 2, 3, 1, 1, 1, 1, 1]
 	},
-	// {
-	// 	name:"Sally",
-	// 	photo: "#",
-	// 	scores: [1, 3, 1, 2, 3, 1, 1, 1, 1, 1]
-	// },
+	{
+		name:"Sally",
+		photo: "#",
+		scores: [1, 3, 1, 2, 3, 1, 1, 1, 1, 1]
+	},
 	{
 		name:"Fred",
 		photo: "#",

@@ -66,21 +66,10 @@
 				<option value="5">5 (Strongly Agree)</option>
 			</select>
 
-		<h3><strong>Question Three</strong></h3>
-		<h4> You tend to talk about yourself and your experiences in an attempt to connect with those around you </h4>
-			<select data-placeholder="" class="chosen-select" id="q3">
-				<option value=""></option>
-				<option value="1">1 (Strongly Disagree)</option>
-				<option value="2">2 </option>
-				<option value="3">3 </option>
-				<option value="4">4 </option>
-				<option value="5">5 (Strongly Agree)</option>
-			</select>
-
 		<h3><strong>Question Four</strong></h3>
 		<h4>  </h4>
 			<select data-placeholder="" class="chosen-select" id="q4">
-				<option value=""></option>
+				<option value="">You love going out and people would describe you as a party animal.</option>
 				<option value="1">1 (Strongly Disagree)</option>
 				<option value="2">2 </option>
 				<option value="3">3 </option>
@@ -91,7 +80,7 @@
 		<h3><strong>Question Five</strong></h3>
 		<h4>  </h4>
 			<select data-placeholder="" class="chosen-select" id="q5">
-				<option value=""></option>
+				<option value="">Your ideal Friday night would include hanging out with your cats and binge watching tv.</option>
 				<option value="1">1 (Strongly Disagree)</option>
 				<option value="2">2 </option>
 				<option value="3">3 </option>
@@ -102,7 +91,7 @@
 		<h3><strong>Question Six</strong></h3>
 		<h4>  </h4>
 			<select data-placeholder="" class="chosen-select" id="q6">
-				<option value=""></option>
+				<option value="">You love to travel and explore new places.</option>
 				<option value="1">1 (Strongly Disagree)</option>
 				<option value="2">2 </option>
 				<option value="3">3 </option>
@@ -113,7 +102,7 @@
 		<h3><strong>Question Seven</strong></h3>
 		<h4>  </h4>
 			<select data-placeholder="" class="chosen-select" id="q7">
-				<option value=""></option>
+				<option value="">You can be described as an introverted person and you would rather hangout with animals than people</option>
 				<option value="1">1 (Strongly Disagree)</option>
 				<option value="2">2 </option>
 				<option value="3">3 </option>
@@ -124,7 +113,7 @@
 		<h3><strong>Question Eight</strong></h3>
 		<h4>  </h4>
 			<select data-placeholder="" class="chosen-select" id="q8">
-				<option value=""></option>
+				<option value="">You're really into eating delicious food</option>
 				<option value="1">1 (Strongly Disagree)</option>
 				<option value="2">2 </option>
 				<option value="3">3 </option>
@@ -135,7 +124,7 @@
 		<h3><strong>Question Nine</strong></h3>
 		<h4>  </h4>
 			<select data-placeholder="" class="chosen-select" id="q9">
-				<option value=""></option>
+				<option value="">You enjoy drinking beverages.</option>
 				<option value="1">1 (Strongly Disagree)</option>
 				<option value="2">2 </option>
 				<option value="3">3 </option>
@@ -146,7 +135,7 @@
 		<h3><strong>Question Ten</strong></h3>
 		<h4>  </h4>
 			<select data-placeholder="" class="chosen-select" id="q10">
-				<option value=""></option>
+				<option value="">Sports are totally your thing.</option>
 				<option value="1">1 (Strongly Disagree)</option>
 				<option value="2">2 </option>
 				<option value="3">3 </option>
@@ -227,29 +216,35 @@
 
     	// Form validation
     	function validateForm() {
-		  var isValid = true;
-		  $('.form-control').each(function() {
-		    if ( $(this).val() === '' )
-		        isValid = false;
-		  });
+    		//isValid is automatically set to true
+		  	var isValid = true;
 
-		  $('.chosen-select').each(function() {
+		  	//if form-control is blank then invalid is changed to false
+			  $('.form-control').each(function() {
+			    if ( $(this).val() === '' )
+			        isValid = false;
+		  	});
 
-		  	if( $(this).val() === "")
-		  		isValid = false
-		  })
-		  return isValid;
-		}
+			  //if chosen select is blank then isvalid is changed to false
+		  	$('.chosen-select').each(function() {
 
-		// If all required fields are filled
-		if (validateForm() == true)
-		{
+			  	if( $(this).val() === "")
+			  		isValid = false
+		 		})
 
+		  	return isValid;
+			}
+
+			// If all required fields are filled
+			if (validateForm() == true)
+			{
 			// Create an object for the user's data
 	    	var userData = {
 	    		name: $("#name").val(),
 	    		photo: $("#photo").val(),
-	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+	    		scores: [
+	    			$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), 
+	    		]
 	    	}
 	    	// Grab the URL of the website
 	    	var currentURL = window.location.origin;
