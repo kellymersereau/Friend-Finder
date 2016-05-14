@@ -8,7 +8,7 @@ var friends = [
 	{
 		name:"Sally",
 		photo: "#",
-		scores: [1, 3, 1, 2, 3, 1, 1, 1, 1, 1]
+		scores: [1, 3, 1, 2, 3, 1, 1, 4, 1, 1]
 	},
 	{
 		name:"Fred",

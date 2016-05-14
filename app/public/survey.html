@@ -248,11 +248,11 @@
 	    	// Grab the URL of the website
 	    	var directoryURL = 'https://salty-island-23857.herokuapp.com/';
 		    $.post(directoryURL + "api/friends/", userData, function(data){
-
-		      console.log('user data posted' + data)
-		       	$("#matchName").text(data.name);
-		       	$('#matchImg').attr("src", data.photo);
-		       	$("#resultsModal").modal('toggle');	
+		    	// Grab the result from the AJAX post so that the best match's name and photo are displayed.
+		    	$("#matchName").text(data.name);
+		    	$('#matchImg').attr("src", data.photo);
+		    	// Show the modal with the best match 
+		    	$("#resultsModal").modal('toggle');
 		    }); 
 
 	  } else {
