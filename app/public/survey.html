@@ -215,7 +215,7 @@
     $("#submit").on("click", function(){
     	//isValid is automatically set to true
    	  	var isValid = true;
-   	  	
+
     	// Form validation
     	function validateForm() {
 
@@ -248,8 +248,8 @@
 	    		]
 	    	}
 	    	// Grab the URL of the website
-	    	var directoryURL = 'https://salty-island-23857.herokuapp.com/';
-		    $.post(directoryURL + "api/friends/", userData, function(data){
+	    	var directoryURL = 'https://salty-island-23857.herokuapp.com/api/friends/';
+		    $.post(directoryURL, userData, function(data){
 		    	// Grab the result from the AJAX post so that the best match's name and photo are displayed.
 		    	$("#matchName").text(data.name);
 		    	$('#matchImg').attr("src", data.photo);
