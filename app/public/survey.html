@@ -220,7 +220,7 @@
 		  	var isValid = true;
 
 		  	//if form-control is blank then invalid is changed to false
-			  $('.form-control').each(function() {
+			$('.form-control').each(function() {
 			    if ( $(this).val() === '' )
 			        isValid = false;
 		  	});
@@ -233,10 +233,11 @@
 		 		})
 
 		  	return isValid;
-			}
+		};
 
-			// If all required fields are filled
-			if (validateForm() == true){
+		// If all required fields are filled
+		// if (validateForm() == true){
+		if(isValid){
 			// Create an object for the user's data
 	    	var userData = {
 	    		name: $("#name").val(),
