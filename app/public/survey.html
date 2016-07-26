@@ -213,11 +213,12 @@
 
     // Capture the form inputs 
     $("#submit").on("click", function(){
-
+    	//isValid is automatically set to true
+   	  	var isValid = true;
+   	  	
     	// Form validation
     	function validateForm() {
-    		//isValid is automatically set to true
-		  	var isValid = true;
+
 
 		  	//if form-control is blank then invalid is changed to false
 			$('.form-control').each(function() {
