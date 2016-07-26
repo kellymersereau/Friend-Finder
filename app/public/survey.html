@@ -185,7 +185,9 @@
 	</div>
 
 	<script type="text/javascript">
-		
+
+	var friends = require('../data/friends.js');
+
 			// Chosen CSS
     var config = {
       '.chosen-select': {},
@@ -249,7 +251,7 @@
 	    	}
 	    	// Grab the URL of the website
 	    	var directoryURL = 'https://salty-island-23857.herokuapp.com/api/friends/';
-		    $.post(directoryURL, userData, function(data){
+		    $.post(directoryURL, function(userData){
 		    	// Grab the result from the AJAX post so that the best match's name and photo are displayed.
 		    	$("#matchName").text(data.name);
 		    	$('#matchImg').attr("src", data.photo);
